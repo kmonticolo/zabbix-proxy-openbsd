@@ -1,0 +1,8 @@
+*       *       *       *       *       pgrep -q java || PATH=$PATH:/usr/local/jdk-1.8.0/bin/ /usr/local/sbin/zabbix_java/startup.sh && logger zabbix_proxy_java_proxy_RESTART
+*       *       *       *       *       /etc/rc.d/zabbix_proxy check >/dev/null || /etc/rc.d/zabbix_proxy start && logger zabbix_proxy_RESTART
+# for zabbix integration
+*       *       *       *       *       cp /root/.ssh/config /root/is60-tests/test_IS60_INTEG_*common.py /tmp/
+
+#0      3       *       *       *       /usr/bin/find /var/mysqlbackup/ -name "mysqldump*gz" -ctime +60 -delete
+
+0 3 * * * [[ $(ls -1 /var/mysqlbackup/mysqldump*gz|wc -l) -gt 55 ]] && /usr/bin/find /var/mysqlbackup/ -name "mysqldump*gz" -ctime +60 -delete
