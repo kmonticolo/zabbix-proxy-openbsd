@@ -1,0 +1,2 @@
+PATH=$PATH:/usr/local/jdk-1.8.0/bin/ /usr/local/sbin/zabbix_java/startup.sh 
+swapctl -a /usr/swap0
