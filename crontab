@@ -1,5 +1,5 @@
-*       *       *       *       *       pgrep -q java || PATH=$PATH:/usr/local/jdk-1.8.0/bin/ /usr/local/sbin/zabbix_java/startup.sh && logger zabbix_proxy_java_proxy_RESTART
-*       *       *       *       *       /etc/rc.d/zabbix_proxy check >/dev/null || /etc/rc.d/zabbix_proxy start && logger zabbix_proxy_RESTART
+*       *       *       *       *       pgrep -q java || ( PATH=$PATH:/usr/local/jdk-1.8.0/bin/ /usr/local/sbin/zabbix_java/startup.sh && logger zabbix_proxy_java_proxy_RESTART )
+*       *       *       *       *       /etc/rc.d/zabbix_proxy check >/dev/null || ( /etc/rc.d/zabbix_proxy start && logger zabbix_proxy_RESTART )
 # for zabbix integration
 *       *       *       *       *       cp /root/.ssh/config /root/is60-tests/test_IS60_INTEG_*common.py /tmp/
 
